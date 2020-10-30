@@ -32,7 +32,7 @@ if (screen.width >= 768) {
 		loadExternalResource(live2d_path + "https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/hexo/live2d-widget/waifu-tips.js", "js")
 	]).then(() => {
 		initWidget({
-			waifuPath: live2d_path + "waifu-tips.json",
+			waifuPath: live2d_path + "https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/hexo/live2d-widget/waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
 			cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
 		});
