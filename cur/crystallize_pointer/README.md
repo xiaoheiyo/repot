@@ -1,0 +1,5 @@
+https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/cur/crystallize_pointer/alternate.cur
+https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/cur/crystallize_pointer/pointer.cur
+https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/cur/crystallize_pointer/alternate.cur
+https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/cur/crystallize_pointer/alternate.cur
+https://cdn.jsdelivr.net/gh/xiaoheiyo/repot@latest/cur/crystallize_pointer/alternate.cur
