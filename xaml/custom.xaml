@@ -1,66 +1,29 @@
-<local:MyCard Title="复杂布局">
-    <StackPanel Margin="0,40,23,15">
-        <local:MyHint Margin="0,0,0,7" IsWarn="False"
-                   Text="下面的按钮列举了全部 6 种 EventType 作为示例。" />
-        <TextBlock Margin="0,0,0,4"
-                   Text="你需要用到 StackPanel 在一横行里塞下多个按钮，你可以仅在这个教学卡片的基础上稍作调整，来实现自己的按钮布局。" />
-        <TextBlock Margin="0,0,0,10"
-                   Text="如果你要实现更复杂的布局，你必须使用 Grid 等控件。多百度吧……谷歌也行。" />
-      
-        <!-- 这是第一行 -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0" ColorType="Highlight"
-                   Text="打开 B 站" EventType="打开网页" EventData="https://www.bilibili.com/" />
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0"
-                   Text="进入 Hypixel" EventType="启动游戏" EventData="1.16.3|mc.hypixel.net" ToolTip="使用 Minecraft 1.16.3 进入 Hypixel" />
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0"
-                   Text="打开画图" EventType="打开文件" EventData="mspaint.exe" />
-        </StackPanel>
-      
-        <!-- 这是第二行 -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0" ColorType="Red"
-                   Text="复制召唤命令" EventType="复制文本" EventData="/execute as @a at @s run summon Creeper ~ ~2 ~" ToolTip="这条 Minecraft 命令会在每个玩家头顶召唤一只苦力怕！" />
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0"
-                   Text="刷新主页" EventType="刷新主页" ToolTip="这通常用于联网更新主页时刷新信息，对本地文件没啥用" />
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="0,0,13,0"
-                   Text="下载作者的头像" EventType="下载文件" EventData="https://www.mcbbs.net/uc_server/data/avatar/000/14/51/06_avatar_small.jpg?ts=1471402592" />
-        </StackPanel>
-      
-    </StackPanel>
-</local:MyCard>
-
-<!-- 
-全部通用的属性：
- - Width、Height：设置宽度与高度
- - ToolTip：设置鼠标指向时的提示文本
- - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
- - Background：调整背景颜色（使用类似 Background="{DynamicResource ColorBrush5}" 的格式以调用 PCL2 当前的主题颜色，修改末尾的数字编号以改变颜色浓度）
- - Margin：调整外边距（格式为 左,上,右,下。例如 Margin="0,0,0,2" 即为 2 单位的下边距）
- - HorizontalAlignment：设置对齐方式（Left、Center、Right）
-TextBlock（纯文本）：
- - Text：设置显示的文本（如果要使用引号等特殊字符，自行百度 XAML 转义）
- - TextWrapping：开启自动换行
- - FontSize：设置字号
- 
-Image（图片）：
- - Source：要显示的图片的网址
-local:MyHint（提示条）：
- - Text：设置显示的文本（&#xA; 代表换行）
- - IsWarn：设置为 True 代表警告样式，False 代表提示样式
- 
-local:MyButton（按钮）：
- - Text：设置显示的文本
- - Padding：设置内边距，格式与 Margin 一致
- - ColorType：设置颜色主题（Highlight 为当前启动器的主题颜色，Red 为红色，默认为黑色）
- - EventType、EventData：触发特定事件
- 
-local:MyTextButton（文本按钮）：
- - Text：设置显示的文本
- - EventType、EventData：触发特定事件
- 
-local:MyCard（卡片）：
- - Title：设置显示的标题文本
- - CanSwap：这张卡片是否可以折叠，True 为是，False 为否
- - IsSwaped：这张卡片是否默认折叠，要求 CanSwap 必须为 True
--->
+        <TextBlock FontSize="72" Width="350" Height="100" x:Name="tb">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard Duration="0:0:0.6" 
+                                        RepeatBehavior="Forever" 
+                                        Storyboard.TargetName="tb">
+                                
+                                <StringAnimationUsingKeyFrames Storyboard.TargetProperty="Text">
+                                    <DiscreteStringKeyFrame Value="性感软粉" KeyTime="0.0:0"/>
+                                    <DiscreteStringKeyFrame Value="在线发♂牌" KeyTime="0:0:0.30"/><!--在此处写下文字-->
+                                </StringAnimationUsingKeyFrames>
+                                <!--此处更改颜色-->
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground.Color">
+                                    <DiscreteColorKeyFrame Value="Red" KeyTime="0:0:0.0" />
+                                    <DiscreteColorKeyFrame Value="Orange" KeyTime="0:0:0.1" />
+                                    <DiscreteColorKeyFrame Value="Yellow" KeyTime="0:0:0.2"/>
+                                    <DiscreteColorKeyFrame Value="Green" KeyTime="0:0:0.3"/>
+                                    <DiscreteColorKeyFrame Value="Blue" KeyTime="0:0:0.4"/>
+                                    <DiscreteColorKeyFrame Value="DarkBlue" KeyTime="0:0:0.5"/>
+                                    <DiscreteColorKeyFrame Value="Purple" KeyTime="0:0:0.6"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
